@@ -1,0 +1,84 @@
+.image-container {
+  position: relative;
+}
+
+.base-image {
+  z-index: 1; /* Put the overlay image on top */
+}
+
+.overlay-image {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  z-index: 1; /* Put the overlay image on top */
+}
+
+.inventory {
+  max-width: 222px;
+  border: 1px solid yellow; /* Adding the yellow border */
+  padding: 20px;
+  width: fit-content;
+  background-color: rgb(25, 25, 25);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.backpack {
+  max-width: 222px;
+  border: 1px solid yellow; /* Adding the yellow border */
+  padding: 20px;
+  width: fit-content;
+  background-color: rgb(25, 25, 25);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.backpack-row {
+  display: flex;
+  justify-content: space-between;
+  /* Additional styling for the backpack row */
+}
+
+.inventory-row {
+  display: flex;
+  
+}
+
+.ring-row {
+  display: flex;
+}
+
+.backpackSquare {
+  width: 34px;
+  height: 34px;
+  max-width: 34px;
+  max-height: 34px;
+  padding: 1px;
+}
+
+.backpackSquare:hover {
+  background-color: white;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block; /* This allows the container to only take up as much space as the image */
+}
+
+.image-info {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 100%; /* Position it below the image */
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  pointer-events: none; /* Allow interactions with the underlying image */
+}
+
+.image-container:hover .image-info {
+  display: block; /* Show on hover */
+}
