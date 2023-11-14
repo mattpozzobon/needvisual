@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Droppable from './Droppable';
 import {DndContext} from '@dnd-kit/core';
 import { useInventory } from '../Database/Inventory';
@@ -14,9 +14,20 @@ export function Game() {
     }
     return result;
   }
+  
+  const [isOutside, setIsOutside] = useState(false);
+
+  const handleDragStart = (event) => {
+    console.log('event,', event);
+    // setIsOutside(true);
+    // if (event.active.id !== event.over.id) {
+    //     setIsOutside(false);
+    //     console.log('isOutside', isOutside);
+    // };
+  }
 
   return (
-    <DndContext onDragEnd={moveItemFromTo}>
+    <DndContext onDragEnd={moveItemFromTo} onDragStart={handleDragStart}>
 
       <div className='backpack'>
         {chunks(slots.filter(slot => slot.type === "backpack"), 5).map((rowSlots, rowIndex) => (

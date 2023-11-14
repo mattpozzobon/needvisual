@@ -5,7 +5,7 @@ import Game from './Components/Game';
 function App() {
   return (
     <InventoryProvider>
-      <Game></Game>
+      <Game/>
     </InventoryProvider>
   );
 };
